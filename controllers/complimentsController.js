@@ -24,9 +24,11 @@ var complimentsController = {
       id: req.params.id,
       compliment: Compliment.find([req.params.id])
     });
+  },
+  update: function(req,res){
+    var compliment = Compliment.update(req.body.compliment)
+    res.redirect("/compliment")
   }
-
- // update action code goes here...
 }
 
 module.exports = complimentsController;
